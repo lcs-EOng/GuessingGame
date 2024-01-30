@@ -66,6 +66,7 @@ struct GameView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(.red)
+                
 
                 
                 // Show the user's guesses
@@ -97,7 +98,15 @@ struct GameView: View {
         // When should they guess higher?
         // When should then guess lower?
         // FILL IN THIS CODE
-        
+        let a = target
+        let b = selectedNumber
+        if a > b {
+            feedback = ("\(selectedNumber) is smaller than the target")
+        } else if a < b {
+            feedback = ("\(selectedNumber) is larger than the target")
+        } else {
+           feedback = ("You guess is Correct")
+        }
         // Save the user's guesses
         guessesMade.append(selectedNumber)
         
